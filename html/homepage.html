@@ -6,9 +6,9 @@
   <title>BuildTogether</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/homepage.css">
-  
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     </a>
 
     <div class="search-box">
-      <input type="text" placeholder="მოძებნე ხელოსანი ან სერვისი... (მაგ. სანტექნიკი, კაფელში, არქიტექტორი)">
+      <input type="text" placeholder="მოძებნე ხელოსანი ან სერვისი... (მაგ. სანტექნიკი, კაფელში, არქიტექტორი)" data-translate-placeholder="search_placeholder">
       <button class="search-btn" aria-label="Search">
         <img src="../assets/icons/Search_header.svg" alt="Search">
       </button>
@@ -27,27 +27,25 @@
 
     <div class="nav-right">
         <div class="lang-switch">
-            <span class="lang-option active">GEO</span>
+            <span class="lang-option active" data-lang="geo">GEO</span>
             <span class="divider">/</span>
-            <span class="lang-option">ENG</span>
+            <span class="lang-option" data-lang="eng">ENG</span>
         </div>
 
       <button class="login-btn">
         <img src="../assets/icons/profile.svg" alt="User">
-        <span>შესვლა</span>
+        <span data-translate="login_btn">შესვლა</span>
       </button>
     </div>
   </header>
   
-  
-  
   <main>
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-translate="hero_title">
                 ყველაფერი რემონტისა <br> და სახლის მოვლისთვის — ერთ სივრცეში
             </h1>
-            <p class="hero-description">
+            <p class="hero-description" data-translate="hero_desc">
                 მშენებლობა, სრული რემონტი <br> თუ წვრილმანი შეკეთება? იპოვე სანდო ოსტატები და კომპანიები მარტივად
             </p>
         </div>
@@ -57,41 +55,37 @@
         </div>
     </section>
     
-    
     <section class="action-cards-section">
         <div class="action-cards-container">
             <div class="action-card card-client">
                 <div class="card-content">
-                    <h2 class="card-title"> დაიწყე პროექტი ან შეკვეთა
+                    <h2 class="card-title" data-translate="card1_title"> დაიწყე პროექტი ან შეკვეთა
                         <img src="../assets/icons/Search.svg" alt="Search Icon" class="card-title-icon">
                     </h2>
-                    <p class="card-description">იპოვე სანდო ხელოსნები, სარემონტო ბრიგადები ან <br> სამშენებლო კომპანიები</p>
+                    <p class="card-description" data-translate="card1_desc">იპოვე სანდო ხელოსნები, სარემონტო ბრიგადები ან <br> სამშენებლო კომპანიები</p>
                 </div>
                 
                 <a href="#" class="card-btn btn-primary">
-                    <span>სერვისის არჩევა</span>
+                    <span data-translate="card1_btn">სერვისის არჩევა</span>
                     <img src="../assets/icons/Vector_1.svg" alt="Arrow Right" class="btn-icon">
                 </a>
             </div>
             
-
             <div class="action-card card-pro">
                 <div class="card-content">
-                    <h2 class="card-title"> ვარ პროფესიონალი
+                    <h2 class="card-title" data-translate="card2_title"> ვარ პროფესიონალი
                         <img src="../assets/icons/AddProfile.svg" alt="User Icon" class="card-title-icon">
                     </h2>
-                    <p class="card-description">დარეგისტრირდი, განათავსე ინფორმაცია შენს შესახებ <br> და იპოვე ახალი შეკვეთები</p>
+                    <p class="card-description" data-translate="card2_desc">დარეგისტრირდი, განათავსე ინფორმაცია შენს შესახებ <br> და იპოვე ახალი შეკვეთები</p>
                 </div>
                 
                 <a href="#" class="card-btn btn-accent">
-                    <span>პროფილის შექმნა</span>
+                    <span data-translate="card2_btn">პროფილის შექმნა</span>
                     <img src="../assets/icons/Vector_2.svg" alt="Arrow Right" class="btn-icon">
                 </a>
             </div>
         </div>
     </section>
-    
-    
     
     <section class="stats-section">
         <div class="stats-container">
@@ -99,7 +93,7 @@
                 <span class="stat-number">36+</span>
                 <div class="stat-label-wrapper">
                     <img src="../assets/icons/checkmark.svg" alt="Check Icon" class="stat-icon">
-                    <p class="stat-label">დასრულებული პროექტი</p>
+                    <p class="stat-label" data-translate="stat1_label">დასრულებული პროექტი</p>
                 </div>
             </div>
             
@@ -107,7 +101,7 @@
                 <span class="stat-number">50+</span>
                 <div class="stat-label-wrapper">
                     <img src="../assets/icons/hammer.svg" alt="Hammer Icon" class="stat-icon">
-                    <p class="stat-label">მიმდინარე პროექტი</p>
+                    <p class="stat-label" data-translate="stat2_label">მიმდინარე პროექტი</p>
                 </div>
             </div>
             
@@ -115,51 +109,47 @@
                 <span class="stat-number">97%</span>
                 <div class="stat-label-wrapper">
                     <img src="../assets/icons/smiley.svg" alt="Smile Icon" class="stat-icon">
-                    <p class="stat-label">კმაყოფილი კლიენტი</p>
+                    <p class="stat-label" data-translate="stat3_label">კმაყოფილი კლიენტი</p>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
-
-
-
 <footer class="site-footer">
     <div class="footer-container">
-        
         <div class="footer-column footer-brand-col">
             <div class="footer-logo">
                 <img src="../assets/icons/BuildTogether.svg" alt="BuildTogether Logo">
             </div>
-            <p class="footer-description"> ციფრული პლატფორმა, რომელიც <br> აერთიანებს მშენებლობას, სრულ <br>
+            <p class="footer-description" data-translate="footer_desc"> ციფრული პლატფორმა, რომელიც <br> აერთიანებს მშენებლობას, სრულ <br>
                 რემონტსა და წვრილმან <br> საყოფაცხოვრებო საქმეების ხელოსნებს. <br> გახადე ნებისმიერი პროცესი მარტივი და <br> ორგანიზებული.
             </p>
         </div>
         
         <div class="footer-column">
-            <h3 class="footer-title">მომსახურებები</h3>
+            <h3 class="footer-title" data-translate="footer_col1_title">მომსახურებები</h3>
             <ul class="footer-links">
-                <li><a href="#">მშენებლობა</a></li>
-                <li><a href="#">სრული რემონტი</a></li>
-                <li><a href="#">წვრილმანი შეკეთება & მონტაჟი</a></li>
+                <li><a href="#" data-translate="footer_link1">მშენებლობა</a></li>
+                <li><a href="#" data-translate="footer_link2">სრული რემონტი</a></li>
+                <li><a href="#" data-translate="footer_link3">წვრილმანი შეკეთება & მონტაჟი</a></li>
             </ul>
         </div>
         
         <div class="footer-column">
-            <h3 class="footer-title">პლატფორმა & კომპანია</h3>
+            <h3 class="footer-title" data-translate="footer_col2_title">პლატფორმა & კომპანია</h3>
             <ul class="footer-links">
-                <li><a href="#">როგორ მუშაობს</a></li>
-                <li><a href="#">ჩვენ შესახებ</a></li>
-                <li><a href="#">ბლოგი / რჩევები</a></li>
-                <li><a href="#">ხშირად დასმული კითხვები</a></li>
+                <li><a href="#" data-translate="footer_link4">როგორ მუშაობს</a></li>
+                <li><a href="#" data-translate="footer_link5">ჩვენ შესახებ</a></li>
+                <li><a href="#" data-translate="footer_link6">ბლოგი / რჩევები</a></li>
+                <li><a href="#" data-translate="footer_link7">ხშირად დასმული კითხვები</a></li>
             </ul>
         </div>
         
         <div class="footer-column">
-            <h3 class="footer-title">კონტაქტი</h3>
+            <h3 class="footer-title" data-translate="footer_col3_title">კონტაქტი</h3>
             <ul class="footer-links contact-info">
-                <li>თბილისი, საქართველო</li>
+                <li data-translate="footer_contact1">თბილისი, საქართველო</li>
                 <li>+995 32 2 XX XX XX</li>
                 <li>info@buildtogether.ge</li>
             </ul>
@@ -168,6 +158,5 @@
 </footer>
   
 <script src="../js/homepage.js"></script>
-
 </body>
 </html>
