@@ -133,6 +133,8 @@ html.lang-eng * {
   cursor: pointer;
   box-sizing: border-box;
   transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .login-btn:hover {
