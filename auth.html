@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildTogetherAuth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="BuildTogether">Build<span>Together</span></a>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <input id="headerSearch" type="text" placeholder="áƒ›áƒáƒ«áƒ”áƒ‘áƒœáƒ” áƒ®áƒ”áƒšáƒáƒ¡áƒáƒœáƒ˜ áƒáƒœ áƒ¡áƒ”áƒ áƒ•áƒ˜áƒ¡áƒ˜...(áƒ›áƒáƒ’. áƒ¡áƒáƒœáƒ¢áƒ”áƒ¥áƒœáƒ˜áƒ™áƒ˜, áƒ™áƒáƒ¤áƒ”áƒšáƒ˜, áƒáƒ áƒ¥áƒ˜áƒ¢áƒ”áƒ¥áƒ¢áƒáƒ áƒ˜)" />
+        <span class="search-icon"><img src="assets/auth/search.png" class="search-icon-image"></span>
+      </div>
+
+      <button class="language-switch" id="languageSwitch" type="button">
+        <span id="languageText">GEO</span><span>/</span><span id="otherLanguage">ENG</span>
+      </button>
+
+      <button class="header-login" id="openLoginHeader" type="button">
+        <span class="user-icon"><img src="assets/auth/profile.png"></span>
+        <span data-i18n="login">áƒ¨áƒ”áƒ¡áƒ•áƒšáƒ</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <section class="auth-card" id="authCard">
+      <div class="auth-icon">
+        <img src="assets/auth/Vector.png" alt="Create account">
+        
+      </div>
+      <h1 id="formTitle">áƒáƒ•áƒ¢áƒáƒ áƒ˜áƒ–áƒáƒªáƒ˜áƒ</h1>
+      
+
+      <form id="authForm" novalidate>
+
+        <!-- áƒ¡áƒáƒ®áƒ”áƒšáƒ˜ - áƒ›áƒ®áƒáƒšáƒáƒ“ áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ˜áƒ¡áƒáƒ¡ -->
+        <div class="field register-field" id="nameField">
+          <label for="name" data-i18n="name">áƒ¡áƒáƒ®áƒ”áƒšáƒ˜</label>
+
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="given-name"
+            placeholder="áƒ¡áƒáƒ®áƒ”áƒšáƒ˜..."
+          />
+        </div>
+
+
+        <!-- áƒ’áƒ•áƒáƒ áƒ˜ - áƒ›áƒ®áƒáƒšáƒáƒ“ áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ˜áƒ¡áƒáƒ¡ -->
+        <div class="field register-field" id="surnameField">
+          <label for="surname" data-i18n="surname">áƒ’áƒ•áƒáƒ áƒ˜</label>
+
+          <input
+            id="surname"
+            name="surname"
+            type="text"
+            autocomplete="family-name"
+            placeholder="áƒ’áƒ•áƒáƒ áƒ˜..."
+          />
+        </div>
+
+
+        <!-- áƒ”áƒšáƒ¤áƒáƒ¡áƒ¢áƒ / áƒ¢áƒ”áƒšáƒ”áƒ¤áƒáƒœáƒ˜ -->
+        <div class="field" id="emailField">
+          <label for="email" data-i18n="email">
+            áƒ”áƒšáƒ¤áƒáƒ¡áƒ¢áƒ áƒáƒœ áƒ¢áƒ”áƒšáƒ”áƒ¤áƒáƒœáƒ˜áƒ¡ áƒœáƒáƒ›áƒ”áƒ áƒ˜
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="text"
+            autocomplete="username"
+            placeholder="áƒ”áƒšáƒ¤áƒáƒ¡áƒ¢áƒ áƒáƒœ áƒ¢áƒ”áƒšáƒ”áƒ¤áƒáƒœáƒ˜áƒ¡ áƒœáƒáƒ›áƒ”áƒ áƒ˜..."
+          />
+        </div>
+
+
+        <!-- áƒžáƒáƒ áƒáƒšáƒ˜ -->
+        <div class="field" id="passwordField">
+          <label for="password" data-i18n="password">
+            áƒžáƒáƒ áƒáƒšáƒ˜
+          </label>
+
+          <div class="password-wrap">
+
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="áƒžáƒáƒ áƒáƒšáƒ˜..."
+            />
+
+            <button
+              class="eye"
+              id="togglePassword"
+              type="button"
+              aria-label="áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒ©áƒ•áƒ”áƒœáƒ”áƒ‘áƒ"
+            >
+              <img src="assets/auth/Frame.png" alt="Show password">
+            </button>
+
+          </div>
+        </div>
+
+
+        <!-- áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜ - áƒ›áƒ®áƒáƒšáƒáƒ“ áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ˜áƒ¡áƒáƒ¡ -->
+        <div class="field register-field" id="confirmPasswordField">
+
+          <label for="confirmPassword" data-i18n="confirmPassword">
+            áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜
+          </label>
+
+          <div class="password-wrap">
+
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              autocomplete="new-password"
+              placeholder="áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜..."
+            />
+
+            <button
+              class="eye"
+              id="toggleConfirmPassword"
+              type="button"
+              aria-label="áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒ©áƒ•áƒ”áƒœáƒ”áƒ‘áƒ"
+            >
+              <img src="assets/auth/Frame.png" alt="Show password">
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- Forgot password - áƒ›áƒ®áƒáƒšáƒáƒ“ Login-áƒ–áƒ” -->
+        <div class="forgot-row" id="forgotRow">
+
+          <button
+            type="button"
+            class="link-button"
+            id="forgotPassword"
+            data-i18n="forgotPassword"
+          >
+            áƒ“áƒáƒ’áƒáƒ•áƒ˜áƒ¬áƒ§áƒ“áƒáƒ— áƒžáƒáƒ áƒáƒšáƒ˜?
+          </button>
+
+        </div>
+
+
+        <button
+          class="submit-btn"
+          id="submitButton"
+          type="submit"
+        >
+          áƒ¨áƒ”áƒ¡áƒ•áƒšáƒ
+        </button>
+
+      </form>
+
+      <div class="social-login" id="socialLogin">
+        <button type="button" title="Google"><img src="assets/auth/google.png"></button>
+        <button type="button" title="Facebook"><img src="assets/auth/facebook.png"></button>
+        <button type="button" title="X"><img src="assets/auth/x-icon.png"></button>
+        <button type="button" title="Apple"><img src="assets/auth/apple.png"></button>
+      </div>
+
+      <p class="bottom-text" id="bottomText">
+        <span id="bottomMessage">áƒáƒ  áƒ’áƒáƒ¥áƒ•áƒ¡ áƒ”áƒ¥áƒáƒ£áƒœáƒ—áƒ˜?</span>
+
+        <button
+          class="link-button"
+          id="switchMode"
+          type="button"
+        >
+          áƒ¨áƒ”áƒ¥áƒ›áƒœáƒ
+        </button>
+      </p>
+
+      <div class="success-message" id="successMessage" role="status"></div>
+      <div class="reset-page" id="resetPage">
+
+        <!-- STEP 1: áƒ›áƒáƒœáƒáƒªáƒ”áƒ›áƒ”áƒ‘áƒ˜áƒ¡ áƒ¨áƒ”áƒ§áƒ•áƒáƒœáƒ -->
+        <div id="resetEmailStep">
+
+          <div class="auth-icon">
+            <img src="assets/auth/Vector.png" alt="Password recovery">
+          </div>
+
+          <h1 id="resetTitle">áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒáƒ¦áƒ“áƒ’áƒ”áƒœáƒ</h1>
+
+          
+
+          <form id="resetForm">
+
+            <div class="field">
+
+              <label for="resetEmail" id="resetLabel">
+                áƒ”áƒšáƒ¤áƒáƒ¡áƒ¢áƒ áƒáƒœ áƒ¢áƒ”áƒšáƒ”áƒ¤áƒáƒœáƒ˜áƒ¡ áƒœáƒáƒ›áƒ”áƒ áƒ˜
+              </label>
+
+              <input
+                id="resetEmail"
+                type="text"
+                placeholder="áƒ¨áƒ”áƒ˜áƒ§áƒ•áƒáƒœáƒ” áƒ›áƒáƒœáƒáƒªáƒ”áƒ›áƒ˜..."
+              />
+
+            </div>
+
+            <button
+              class="submit-btn"
+              type="submit"
+              id="resetButton"
+            >
+              áƒ™áƒáƒ“áƒ˜áƒ¡ áƒ’áƒáƒ’áƒ–áƒáƒ•áƒœáƒ
+            </button>
+
+          </form>
+
+        </div>
+
+
+        <!-- STEP 2: áƒ™áƒáƒ“áƒ˜áƒ¡ áƒ¨áƒ”áƒ§áƒ•áƒáƒœáƒ -->
+        <div class="reset-step hidden" id="resetCodeStep">
+
+          <div class="auth-icon">
+            <img src="assets/auth/Vector.png" alt="Recovery code">
+          </div>
+
+          <h1 id="codePageTitle">
+            áƒ©áƒáƒ¬áƒ”áƒ áƒ”áƒ— áƒ™áƒáƒ“áƒ˜
+          </h1>
+
+          <div class="field">
+            <label for="codeInput1" id="resetCodeLabel">
+              
+            </label>
+
+            <div class="code-inputs" id="codeInputs">
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput1" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput2" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput3" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput4" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput5" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+              <div class="code-box">
+                <img src="assets/auth/I.png" class="code-placeholder" alt="">
+                <input id="codeInput6" type="text" class="code-input" maxlength="1" inputmode="numeric">
+              </div>
+
+            </div>
+          </div>
+
+          <button
+            class="submit-btn"
+            type="button"
+            id="verifyCodeButton"
+          >
+            áƒ™áƒáƒ“áƒ˜áƒ¡ áƒ“áƒáƒ“áƒáƒ¡áƒ¢áƒ£áƒ áƒ”áƒ‘áƒ
+          </button>
+
+        </div>
+
+
+        <!-- =====================================================
+            STEP 3: áƒáƒ®áƒáƒšáƒ˜ áƒžáƒáƒ áƒáƒšáƒ˜
+            áƒ”áƒ¡ áƒáƒ áƒ˜áƒ¡ áƒªáƒáƒšáƒ™áƒ” áƒ’áƒ•áƒ”áƒ áƒ“áƒ˜/áƒ”áƒ¢áƒáƒžáƒ˜
+            ===================================================== -->
+
+        <div
+          class="new-password-step hidden"
+          id="newPasswordStep"
+        >
+
+          <div class="auth-icon">
+            <img src="assets/auth/Vector.png" alt="New password">
+          </div>
+
+          <h1 id="newPasswordTitle" data-i18n="newPasswordTitle">
+            áƒáƒ®áƒáƒšáƒ˜ áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒ¨áƒ”áƒ¥áƒ›áƒœáƒ
+          </h1>
+
+
+          <!-- áƒáƒ®áƒáƒšáƒ˜ áƒžáƒáƒ áƒáƒšáƒ˜ -->
+
+          <div class="field">
+
+            <label
+              for="newPassword"
+              id="newPasswordLabel"
+            >
+              áƒáƒ®áƒáƒšáƒ˜ áƒžáƒáƒ áƒáƒšáƒ˜
+            </label>
+
+            <div class="password-wrap">
+
+              <input
+                id="newPassword"
+                type="password"
+                autocomplete="new-password"
+                placeholder="áƒžáƒáƒ áƒáƒšáƒ˜..."
+              />
+
+              <button
+                class="eye"
+                id="toggleNewPassword"
+                type="button"
+                aria-label="áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒ©áƒ•áƒ”áƒœáƒ”áƒ‘áƒ"
+              >
+                <img
+                  src="assets/auth/Frame.png"
+                  alt="Show password"
+                >
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜ -->
+
+          <div class="field">
+
+            <label
+              for="confirmNewPassword"
+              id="confirmNewPasswordLabel"
+              data-i18n="confirmNewPasswordLabel"
+            >
+              áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜
+            </label>
+
+            <div class="password-wrap">
+
+              <input
+                id="confirmNewPassword"
+                type="password"
+                autocomplete="new-password"
+                placeholder="áƒ’áƒáƒ˜áƒ›áƒ”áƒáƒ áƒ”áƒ— áƒžáƒáƒ áƒáƒšáƒ˜..."
+              />
+
+              <button
+                class="eye"
+                id="toggleConfirmNewPassword"
+                type="button"
+                aria-label="áƒžáƒáƒ áƒáƒšáƒ˜áƒ¡ áƒ©áƒ•áƒ”áƒœáƒ”áƒ‘áƒ"
+              >
+                <img
+                  src="assets/auth/Frame.png"
+                  alt="Show password"
+                >
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="submit-btn"
+            type="button"
+            id="finishReset"
+          >
+            áƒ¨áƒ”áƒªáƒ•áƒšáƒ
+          </button>
+
+        </div>
+
+        </div>
+
+
+        <button
+          class="back-login"
+          id="backToLogin"
+          type="button"
+        >
+          â† áƒ£áƒ™áƒáƒœ áƒ“áƒáƒ‘áƒ áƒ£áƒœáƒ”áƒ‘áƒ
+        </button>
+
+        <div
+          class="success-message"
+          id="resetMessage"
+          role="status"
+        ></div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <div class="logo footer-logo">
+        Build<span>Together</span>
+      </div>
+
+      <p data-i18n="footerDescription">
+        áƒ’áƒáƒ›áƒáƒªáƒ“áƒ˜áƒšáƒ˜ áƒžáƒ áƒáƒ¤áƒ”áƒ¡áƒ˜áƒáƒœáƒáƒšáƒ”áƒ‘áƒ˜, áƒ áƒáƒ›áƒšáƒ”áƒ‘áƒ˜áƒª áƒ“áƒáƒ’áƒ”áƒ®áƒ›áƒáƒ áƒ”áƒ‘áƒ˜áƒáƒœ áƒœáƒ”áƒ‘áƒ˜áƒ¡áƒ›áƒ˜áƒ”áƒ áƒ˜ áƒ¡áƒáƒ›áƒ¨áƒ”áƒœáƒ”áƒ‘áƒšáƒ áƒ“áƒ áƒ¡áƒáƒ áƒ”áƒ›áƒáƒœáƒ¢áƒ áƒ¡áƒáƒ¥áƒ›áƒ˜áƒ¡ áƒ¨áƒ”áƒ¡áƒ áƒ£áƒšáƒ”áƒ‘áƒáƒ¨áƒ˜.
+      </p>
+    </div>
+
+    <div>
+      <h3 data-i18n="services">áƒ›áƒáƒ›áƒ¡áƒáƒ®áƒ£áƒ áƒ”áƒ‘áƒ”áƒ‘áƒ˜</h3>
+      <a href="#" data-i18n="building">áƒ›áƒ¨áƒ”áƒœáƒ”áƒ‘áƒšáƒáƒ‘áƒ</a>
+      <a href="#" data-i18n="fullRenovation">áƒ¡áƒ áƒ£áƒšáƒ˜ áƒ áƒ”áƒ›áƒáƒœáƒ¢áƒ˜</a>
+      <a href="#" data-i18n="minorRepair">áƒ¬áƒ•áƒ áƒ˜áƒšáƒ›áƒáƒœáƒ˜ áƒ¨áƒ”áƒ™áƒ”áƒ—áƒ”áƒ‘áƒ & áƒ›áƒáƒœáƒ¢áƒáƒŸáƒ˜</a>
+    </div>
+
+    <div>
+      <h3 data-i18n="platform">áƒžáƒšáƒáƒ¢áƒ¤áƒáƒ áƒ›áƒ & áƒ™áƒáƒ›áƒžáƒáƒœáƒ˜áƒ</h3>
+      <a href="#" data-i18n="howItWorks">áƒ áƒáƒ’áƒáƒ  áƒ›áƒ£áƒ¨áƒáƒáƒ‘áƒ¡</a>
+      <a href="#" data-i18n="aboutUs">áƒ©áƒ•áƒ”áƒœáƒ¡ áƒ¨áƒ”áƒ¡áƒáƒ®áƒ”áƒ‘</a>
+      <a href="#" data-i18n="blog">áƒ‘áƒšáƒáƒ’áƒ˜ / áƒ áƒ©áƒ”áƒ•áƒ”áƒ‘áƒ˜</a>
+      <a href="#" data-i18n="faq">áƒ®áƒ¨áƒ˜áƒ áƒáƒ“ áƒ“áƒáƒ¡áƒ›áƒ£áƒšáƒ˜ áƒ™áƒ˜áƒ—áƒ®áƒ•áƒ”áƒ‘áƒ˜</a>
+    </div>
+
+    <div>
+      <h3 data-i18n="contact">áƒ™áƒáƒœáƒ¢áƒáƒ¥áƒ¢áƒ˜</h3>
+
+      <a href="#" data-i18n="address">áƒ—áƒ‘áƒ˜áƒšáƒ˜áƒ¡áƒ˜, áƒ¡áƒáƒ¥áƒáƒ áƒ—áƒ•áƒ”áƒšáƒ</a>
+      <a href="tel:+9953222XXXX">+995 32 2X XX XX</a>
+      <a href="mailto:info@buildtogether.ge">info@buildtogether.ge</a>
+    </div>
+  </footer>
+
+
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
